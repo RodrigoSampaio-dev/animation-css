@@ -22,13 +22,60 @@
     animation: loading 0.6s linear infinite;
 }
 
+.battery{
+  height: 20px;
+  width: 500px;
+  border: 2px solid white;
+  border-radius: 10px;
+  margin: 20px auto;
+}
+
+.battery p{
+  color: black;
+  margin-left: 10px;
+  width: 50px;
+  background: transparent;
+  position: fixed;
+}
+
+.charge{
+  height: 20px;
+  width: 500px;
+  color: green;
+  border-radius: 10px;
+  animation: battery-loading 8s linear infinite;
+}
+
+@keyframes battery-loading {
+  0%{
+    width: 0%;
+    background: red;
+  }
+  25%{
+    width: 25%;
+    background: orange;
+  }
+  50%{
+    width: 50%;
+    background: yellow;
+  }
+  75%{
+    width: 75%;
+    background: #d7fc03;
+  }
+  100%{
+    width: 100%;
+    background: green;
+  }
+}
+
 @keyframes loading {
     to{
         transform: rotate(360deg);
     }
 }
 
-.title {
+.title, p {
     animation: blink 1.5s steps(1, end) infinite;
   }
   
@@ -48,10 +95,18 @@
     .title{
         margin-top: 70%;
     }
+
+    .battery{
+      width: 290px;
+    }
 }
 
 @media only screen and (max-width: 320px) {
     .title{
         margin-top: 50%;
+    }
+
+    .battery{
+      width: 290px;
     }
 }
